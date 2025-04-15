@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirect ke Livin' by Mandiri</title>
+  <script>
+    window.onload = function () {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      setTimeout(function () {
+        if (/android/i.test(userAgent)) {
+          // Android → Livin’ + kode cabang
+          window.location.href = "https://play.google.com/store/apps/details?id=id.bmri.livin&referrer=16604";
+        } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          // iOS → App Store Livin’ (link diperbarui)
+          window.location.href = "https://apps.apple.com/id/app/livin-by-mandiri/id1555414743";
+        } else {
+          // Desktop fallback → Website Mandiri
+          window.location.href = "https://www.bankmandiri.co.id";
+        }
+      }, 300); // Delay agar iOS bisa proses redirect
+    };
+  </script>
+</head>
+<body>
+  <p>Sedang mengarahkan ke Livin’ by Mandiri...</p>
+</body>
+</html>
